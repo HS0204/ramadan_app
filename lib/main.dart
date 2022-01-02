@@ -1,6 +1,6 @@
+import 'package:demo/routes/customRouter.dart';
+import 'package:demo/routes/routeNames.dart';
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
-import 'location.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,8 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "flutter demo app",
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
 
-      home: LocationApp(),
+      onGenerateRoute: CustomRouter.allRoutes,
+      initialRoute: homeRoute,
     );
   }
 
